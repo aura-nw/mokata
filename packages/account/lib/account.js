@@ -1,7 +1,15 @@
 'use strict';
 
-module.exports = account;
+module.exports = {
+    account,
+    generateAccount
+};
 
 function account() {
     // TODO
+}
+
+function generateAccount(){
+    // Generate from mnemonic 
+    
 }

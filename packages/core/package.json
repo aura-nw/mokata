@@ -1,5 +1,5 @@
 {
-  "name": "@truffle/core",
+  "name": "@mokata/core",
   "description": "Core code for Mokata command line tool",
   "license": "MIT",
   "author": "aura.network",
@@ -14,21 +14,41 @@
   },
   "version": "5.5.19",
   "bin": {
-    "truffle": "./cli.js",
-    "truffle-exec": "./exec.js"
+    "mokata": "./cli.js",
+    "mokata-exec": "./exec.js"
   },
   "scripts": {
     "prepare": "exit 0",
     "test": "mocha ./test/** ./test/**/*"
   },
   "dependencies": {
+    "address": "^1.1.2",
     "chai": "^4.2.0",
     "colors": "1.4.0",
     "command-exists": "^1.2.8",
     "conf": "^10.0.2",
     "debug": "^4.3.1",
     "del": "^2.2.0",
+    "ethereum-cryptography": "1.0.3",
+    "ethereumjs-wallet": "^1.0.1",
+    "ethpm": "0.0.19",
+    "ethpm-registry": "0.1.0-next.3",
+    "fs-extra": "^9.1.0",
     "get-port": "^5.1.1",
+    "get-random-values": "^1.2.2",
+    "glob": "^7.1.6",
+    "inquirer": "8.2.2",
+    "js-interpreter": "2.2.0",
+    "lodash": "^4.17.21",
+    "mocha": "9.2.2",
+    "node-emoji": "^1.8.1",
+    "original-require": "^1.0.1",
+    "sane": "^4.0.2",
+    "semver": "^7.3.4",
+    "source-map-support": "^0.5.19",
+    "spawn-args": "0.2.0",
+    "tmp": "^0.2.1",
+    "universal-analytics": "^0.4.17",
     "xregexp": "^4.2.4",
     "yargs": "^13.3.0"
   },
@@ -47,5 +67,5 @@
       "email": "ducnv1911@gmail.com"
     }
   ],
-  "namespace": "consensys"
+  "namespace": "aura-nw"
 }

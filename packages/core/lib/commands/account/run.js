@@ -1,6 +1,5 @@
-module.exports = async function (options) {
-  const Account = require("../../../../account");
+const account = require("../../../../account")
 
-  Account.generateAccount();
+module.exports = async function (options) {
+  console.log(account.generateAccount());
 };
-  

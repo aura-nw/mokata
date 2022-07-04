@@ -13,7 +13,6 @@ function account() {
 
 function generateAccount(){
     // Generate from mnemonic 
-    // const mnemonic = bip39.generateMnemonic();
-    // return mnemonic.toString();
-    return 'Hello world!';
+    const mnemonic = bip39.generateMnemonic();
+    console.log(mnemonic.toString());
 }

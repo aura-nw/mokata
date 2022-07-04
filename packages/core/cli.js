@@ -7,12 +7,6 @@ const semver = require("semver"); // to validate Node version
 // const versionInfo = version.info();
 const XRegExp = require("xregexp");
 
-// we need to make sure this function exists so ensjs doesn't complain as it requires
-// getRandomValues for some functionalities - webpack strips out the crypto lib
-// so we shim it here
-// global.crypto = {
-//   getRandomValues: require("get-random-values")
-// };
 
 // pre-flight check: Node version compatibility
 const minimumNodeVersion = "12.0.0";
@@ -72,12 +66,6 @@ runCommand(command, options)
   })
   .catch(error => {
     if (typeof error === "number") {
-      // analytics.send({
-      //   exception: "Numbered Error - " + error,
-      //   version: versionInfo.bundle
-      //     ? versionInfo.bundle
-      //     : "(unbundled) " + versionInfo.core
-      // });
       // If a number is returned, exit with that number.
       process.exit(error);
     } else {
@@ -92,12 +80,6 @@ runCommand(command, options)
         let removedInfo = new XRegExp(XRegExp.escape(identifyingInfo), "g");
         errorData = errorData.replace(removedInfo, "");
       }
-      // analytics.send({
-      //   exception: "Other Error - " + errorData,
-      //   version: versionInfo.bundle
-      //     ? versionInfo.bundle
-      //     : "(unbundled) " + versionInfo.core
-      // });
       // Bubble up all other unexpected errors.
       console.log(error.stack || error.message || error.toString());
       // version.logTruffleAndNode(options.logger);

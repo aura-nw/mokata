@@ -1,4 +1,3 @@
 module.exports = {
-  account: require("./account"),
-  build: require("./build")
+  account: require("./account")
 };

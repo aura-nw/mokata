@@ -1,6 +1,5 @@
-const { bundled, core } = require("../lib/version").info();
+// const { bundled, core } = require("../lib/version").info();
 const OS = require("os");
-const analytics = require("../lib/services/analytics");
 const { extractFlags } = require("./utils/utils"); // contains utility methods
 const globalCommandOptions = require("./global-command-options");
 const debugModule = require("debug");
@@ -153,12 +152,6 @@ const runCommand = async function (command, options) {
     debug("Truffle data migration failed: %o", error);
   }
 
-  analytics.send({
-    command: command.name ? command.name : "other",
-    args: options._,
-    version: bundled || "(unbundled) " + core
-  });
-
   const unhandledRejections = new Map();
 
   process.on("unhandledRejection", (reason, promise) => {
@@ -191,14 +184,12 @@ const displayGeneralHelp = () => {
   });
   yargs
     .usage(
-      "Truffle v" +
-        (bundled || core) +
-        " - a development framework for Ethereum" +
+      "Mokata beta" +
+        " - a development framework for Aura Network" +
         OS.EOL +
         OS.EOL +
-        "Usage: truffle <command> [options]"
+        "Usage: mokata <command> [options]"
     )
-    .epilog("See more at http://trufflesuite.com/docs")
     .showHelp();
 };
 

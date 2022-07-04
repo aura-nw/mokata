@@ -11,5 +11,5 @@ function account() {
 
 function generateAccount(){
     // Generate from mnemonic 
-    
+    return 'Hello World!';
 }

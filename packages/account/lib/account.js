@@ -1,5 +1,7 @@
 'use strict';
 
+var bip39 = require('bip39')
+
 module.exports = {
     account,
     generateAccount
@@ -11,5 +13,6 @@ function account() {
 
 function generateAccount(){
     // Generate from mnemonic 
-    return 'Hello World!';
+    const mnemonic = bip39.generateMnemonic();
+    return mnemonic.toString();
 }

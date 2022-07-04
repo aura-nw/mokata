@@ -1,7 +1,7 @@
 const fse = require("fs-extra");
 const del = require("del");
 const WorkflowCompile = require("@truffle/workflow-compile");
-const BuildError = require("./errors/builderror");
+// const BuildError = require("./errors/builderror");
 const {spawn} = require("child_process");
 const spawnargs = require("spawn-args");
 const _ = require("lodash");
@@ -78,7 +78,7 @@ const Build = {
       // If they've only provided a build function, use that.
       builder = { build: builder };
     } else if (builder.build == null) {
-      throw new BuildError(
+      console.log(
         "Build configuration can no longer be specified as an object. Please see our documentation for an updated list of supported build configurations."
       );
     }

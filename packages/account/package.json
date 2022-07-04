@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/trufflesuite/truffle/issues"
+  },
+  "dependencies": {
+    "bip39": "^3.0.4"
   }
 }

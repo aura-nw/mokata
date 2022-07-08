@@ -14,9 +14,11 @@ async function generateAccount() {
   let privateKey = await amino.Secp256k1HdWallet.fromMnemonic(mnemonic, {
     prefix: "aura"
   });
-  let pubkeys = amino.encodeSecp256k1Pubkey(await privateKey.getAccounts()[0].pubkey);
-  let address = (await privateKey.getAccounts())[0].address;
+  let privateResult = await privateKey.getAccounts();
 
-  console.log(await privateKey.getAccounts());
+  let pubkeys = amino.encodeSecp256k1Pubkey(privateResult[0].pubkey);
+  let address = privateResult[0].address;
+
+  console.log(pubkeys);
 }
 

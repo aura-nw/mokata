@@ -15,8 +15,8 @@ async function generateAccount() {
     prefix: "aura"
   });
   let pubkeys = amino.encodeSecp256k1Pubkey(await privateKey.getAccounts()[0].pubkey);
-  let address = (await wallet.getAccounts())[0].address;
+  let address = (await privateKey.getAccounts())[0].address;
 
-  console.log(pubkeys);
+  console.log(await privateKey.getAccounts());
 }
 

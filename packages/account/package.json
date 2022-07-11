@@ -8,7 +8,7 @@
   "author": "duck59uet <ducnv1911@gmail.com>",
   "homepage": "https://github.com/trufflesuite/truffle#readme",
   "license": "ISC",
-  "main": "lib/account.js",
+  "main": "src/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"

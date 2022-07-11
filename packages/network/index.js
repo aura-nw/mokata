@@ -1,3 +1,3 @@
-const Network = require("./lib/network");
+const generateNetwork = require("./lib/network");
 
-module.exports = { Network };
+module.exports = { generateNetwork };

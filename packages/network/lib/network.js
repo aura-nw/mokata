@@ -16,7 +16,7 @@ async function generateNetwork() {
   let listContainers = await docker.listContainers();
   console.log(listContainers);
   let checkContainer = listContainers.forEach(function(container){
-    if(container.Image.match(/.*serenity.*/))
+    if(container.Image.match(/.*serenity.*/) == true)
       return true;
   })
   console.log(checkContainer);
@@ -25,10 +25,12 @@ async function generateNetwork() {
   //Check aurad image has download or not 
   let listImages = await docker.listImages();
   let checkImage =  listImages.forEach(function(image){
-    if(image.RepoTags.includes('serenity'))
+    if(image.RepoTags.match('serenity'))
       return true
   });
 
   //Download image if not exist
-  
+  // if(checkImage == false){
+  //   await docker.
+  // }
 }

@@ -20,9 +20,9 @@ async function generateAccount() {
 
 
   let result = {
-    rPrivateKey: privateKey,
-    rAddress: address
+    PrivateKey: privateKey,
+    Address: address
   };
 
-  return JSON.stringify(result);
+  return result;
 }

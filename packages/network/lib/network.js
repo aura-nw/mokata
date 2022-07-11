@@ -2,8 +2,6 @@
 
 var Docker = require("dockerode");
 
-module.exports = generateNetwork;
-
 async function generateNetwork() {
   // TODO
   var docker = new Docker({
@@ -20,17 +18,8 @@ async function generateNetwork() {
       return true;
   })
   console.log(checkContainer);
+}
 
-  //If not find aurad image then run container
-  //Check aurad image has download or not 
-  let listImages = await docker.listImages();
-  let checkImage =  listImages.forEach(function(image){
-    if(image.RepoTags.match('serenity'))
-      return true
-  });
-
-  //Download image if not exist
-  // if(checkImage == false){
-  //   await docker.
-  // }
+module.exports = {
+  generateNetwork
 }

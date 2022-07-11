@@ -5,7 +5,7 @@
   "author": "duck59uet <ducnv1911@gmail.com>",
   "homepage": "https://github.com/aura-nw/mokata#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aura-nw/mokata.git"

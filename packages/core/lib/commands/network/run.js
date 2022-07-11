@@ -1,5 +1,5 @@
-const generateNetwork = require('../../../../network')
+const network = require('../../../../network')
 
 module.exports = async function (options) {
-  let result = await generateNetwork();
+  await network.network.generateNetwork();
 };

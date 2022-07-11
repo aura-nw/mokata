@@ -3,10 +3,6 @@
 var bip39 = require("bip39");
 const amino = require("@cosmjs/amino");
 
-module.exports = {
-  generateAccount
-};
-
 async function generateAccount() {
   // Generate from mnemonic
   let mnemonic = bip39.generateMnemonic();
@@ -26,3 +22,7 @@ async function generateAccount() {
 
   return result;
 }
+
+module.exports = {
+  generateAccount
+};

@@ -2,5 +2,5 @@ const account = require("../../../../account")
 
 module.exports = async function (options) {
   let result = await account.mnemonic.generateAccount();
-  console.log(result);
+  let path = await account.config.saveKey();
 };

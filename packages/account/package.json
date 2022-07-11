@@ -30,6 +30,7 @@
     "@cosmjs/amino": "^0.28.10",
     "@cosmjs/stargate": "^0.28.10",
     "@cosmostation/cosmosjs": "^0.11.2",
-    "bip39": "^3.0.4"
+    "bip39": "^3.0.4",
+    "fs-extra": "^10.1.0"
   }
 }

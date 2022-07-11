@@ -1,3 +1,4 @@
-const mnemonic = require('../lib/account');
+const mnemonic = require('../lib/mnemonic');
+const config = require('../lib/config');
 
-module.exports = { mnemonic }
+module.exports = { mnemonic, config }

@@ -1,7 +1,6 @@
 "use strict";
 
 var bip39 = require("bip39");
-const stargate = require("@cosmjs/stargate");
 const amino = require("@cosmjs/amino");
 
 module.exports = {
@@ -19,6 +18,11 @@ async function generateAccount() {
   let pubkeys = amino.encodeSecp256k1Pubkey(privateResult[0].pubkey);
   let address = privateResult[0].address;
 
-  console.log(pubkeys);
-}
 
+  let result = {
+    rPrivateKey: privateKey,
+    rAddress: address
+  };
+
+  return JSON.stringify(result);
+}

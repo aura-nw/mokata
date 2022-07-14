@@ -4,8 +4,8 @@ import path from "path";
 /**
  * init
  */
-class InitConfig {
-  public async init() {
+export class InitConfig {
+  async init() {
     //Init connection json file
     let currentDir = process.cwd();
     let configPath = path.join(currentDir, "mokata-connection.json");
@@ -47,5 +47,3 @@ async function writeEnv(localPath: string) {
   }
 }
 
-
-export = InitConfig;

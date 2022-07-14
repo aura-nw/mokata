@@ -1,4 +1,5 @@
 import * as fs from "fs-extra";
+import { dockerInit } from "./lib/docker"
 import path from "path";
 
 /**
@@ -6,6 +7,8 @@ import path from "path";
  */
 export class InitConfig {
   async init() {
+    await dockerInit();
+
     //Init connection json file
     let currentDir = process.cwd();
     let configPath = path.join(currentDir, "mokata-connection.json");

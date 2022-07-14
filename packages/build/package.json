@@ -27,5 +27,8 @@
   },
   "bugs": {
     "url": "https://github.com/aura-nw/mokata/issues"
+  },
+  "dependencies": {
+    "dockerode": "3.3.2"
   }
 }

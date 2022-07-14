@@ -1,5 +1,6 @@
 module.exports = [
   "account",
   "network",
-  "init"
+  "init",
+  "build",
 ];

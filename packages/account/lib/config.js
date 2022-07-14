@@ -10,7 +10,7 @@ async function saveKey(pair) {
 }
 
 async function verifyLocalPath(localPath, envPair) {
-  let configPath = path.join(localPath, "mokata-env.json");
+  let configPath = path.join(localPath, "mokata-account.json");
 
   if (fs.existsSync(configPath)) {
     //env json file exists
@@ -26,7 +26,7 @@ async function createEnvFile(localPath) {
   let file = path.join(localPath);
   try {
     await fs.ensureFile(file);
-    console.log("File env created!");
+    console.log("File account file created!");
   } catch (err) {
     console.error(err);
   }
@@ -45,7 +45,6 @@ async function writeEnv(localPath, envJson) {
     }
     
     await fs.writeJson(file, secretArr);
-    console.log("Write env success!");
   } catch (err) {
     console.error(err);
   }

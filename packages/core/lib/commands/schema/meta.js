@@ -1,9 +1,9 @@
 module.exports = {
-  command: "build",
-  description: "Build smart contract",
+  command: "schema",
+  description: "Create smart contract schema",
   builder: {
     type: {
-      describe: "Method to build smart contract",
+      describe: "Method to create smart contract schema",
       type: "string",
       default: false,
     },
@@ -14,12 +14,12 @@ module.exports = {
     },
   },
   help: {
-    usage: "mokata build [--type||-t] [--directory||-d]",
+    usage: "mokata schema [--type||-t] [--directory||-d]",
     options: [
       {
         option: "--type <type>",
         description:
-          "Method building smart contract, eg: method \"cosmwasm/rust-optimizer:0.12.6\" using docker image named cosmwasm/rust-optimizer:0.12.6 to build smart contract"
+          "Method building smart contract schema, eg: method \"rust:1.13\" using docker image named rust:1.13 to build smart contract shema"
       },
       {
         option: "--directory <path>",

@@ -1,6 +1,6 @@
 'use strict';
 
-const build = require('..');
+const build = require('../lib/build');
 
 describe('build and create schema', function() {
     it('test build', function() {
@@ -14,18 +14,5 @@ describe('build and create schema', function() {
 
     it('test build specify 1 option', function() {
         build.build({smartContractDirectory: '/home/hunglv46/projects/flower-store-contract'})
-    });
-
-    it('test create schema', function() {
-        build.createSchema({
-            optionName: 'rust',
-            dockerOptions: {socketPath: '/var/run/docker.sock'},
-            dockerImageName: 'rust',
-            smartContractDirectory: '/home/hunglv46/projects/flower-store-contract',
-        });
-    });
-
-    it('test create schema specify 1 option', function() {
-        build.createSchema({smartContractDirectory: '/home/hunglv46/projects/flower-store-contract'});
     });
 });

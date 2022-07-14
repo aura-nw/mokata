@@ -1,0 +1,28 @@
+{
+  "name": "init",
+  "description": "TODO: description",
+  "license": "MIT",
+  "author": "duck59uet <ducnv1911@gmail.com>",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aura-nw/mokata.git",
+    "directory": "packages/box"
+  },
+  "bugs": {
+    "url": "https://github.com/aura-nw/mokata/issues"
+  },
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "axios": "0.26.1",
+    "fs-extra": "^10.1.0",
+    "path": "^0.12.7"
+  }
+}

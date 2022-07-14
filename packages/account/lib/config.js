@@ -14,7 +14,7 @@ async function verifyLocalPath(localPath, envPair) {
 
   if (fs.existsSync(configPath)) {
     //env json file exists
-    await writeEnv(configPath);
+    await writeEnv(configPath, envPair);
   } else {
     //file do not exist then create env json file
     await createEnvFile(configPath);
@@ -35,7 +35,16 @@ async function createEnvFile(localPath) {
 async function writeEnv(localPath, envJson) {
   let file = path.join(localPath);
   try {
-    await fs.writeJson(file, envJson);
+    let secretArr = [];
+    let checkEmpty = await fs.readFile(localPath);
+    secretArr.push(envJson);
+
+    if(checkEmpty.length > 0){
+      let secretPair = await fs.readJSON(localPath);
+      secretArr.push(secretPair[0]);
+    }
+    
+    await fs.writeJson(file, secretArr);
     console.log("Write env success!");
   } catch (err) {
     console.error(err);

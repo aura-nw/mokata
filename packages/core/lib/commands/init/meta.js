@@ -3,13 +3,8 @@ module.exports = {
   description: "Init env",
   builder: {},
   help: {
-    usage: "mokata init [--force]",
+    usage: "mokata init",
     options: [
-      {
-        option: "--force",
-        description:
-          "Initialize env json file"
-      }
     ],
     allowedGlobalOptions: []
   }

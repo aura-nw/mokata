@@ -1,21 +1,30 @@
 module.exports = {
-    command: "account",
-    description: "Generate account",
-    builder: {
-      "reset": {
-        type: "boolean",
-        default: false
-      },
+  command: "account",
+  description: "Generate account",
+  builder: {
+    ls: {
+      describe: "Get list all account",
+      type: "boolean"
     },
-    help: {
-      usage: "mokata account [--force]",
-      options: [{
-        option: "--reset",
+    generate: {
+      describe: "Generate account",
+      type: "boolean"
+    },
+  },
+  help: {
+    usage: "mokata account [--generate||-g] [--ls]",
+    options: [
+      {
+        option: "--ls",
         description:
-          "Run all migrations from the beginning, instead of running from the last " +
-          "completed migration."
-      }],
-      allowedGlobalOptions: []
-    }
-  };
-  
+          "Get list account."
+      },
+      {
+        option: "--generate|-g",
+        description:
+          "Generate account"
+      }
+    ],
+    allowedGlobalOptions: []
+  }
+};

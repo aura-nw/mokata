@@ -16,7 +16,7 @@ async function generateAccount() {
 
 
   let result = {
-    PrivateKey: privateKey,
+    PrivateKey: await privateKey.serialize('password'),
     Address: address
   };
 

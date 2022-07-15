@@ -12,9 +12,8 @@ export class InitConfig {
 
     //Init connection json file
     let currentDir = process.cwd();
-    let configPath = path.join(currentDir, "mokata-connection.json");
-    let envPath = path.join(currentDir, "mokata-account.json");
-  
+    let configPath = path.join(currentDir, "env.json");
+
     if (fs.existsSync(configPath)) {
       //env json file exists
       await writeEnv(configPath);
@@ -24,7 +23,7 @@ export class InitConfig {
       await writeEnv(configPath);
     }
 
-    await faucet(envPath);
+    await faucet(configPath);
   }
 }
 
@@ -41,16 +40,9 @@ async function createEnvFile(localPath: string) {
 async function writeEnv(localPath: string) {
   try {
     let file = path.join(localPath);
-    let connectionJson = {
-        chainId: 'aura-testnet',
-        rpc: '127.0.0.1:26657',
-        lcd: '127.0.0.1:1317',
-        faucetApi: '127.0.0.1:4500'
-    }
-
-    await fs.writeFile(file, JSON.stringify(connectionJson), 'utf8');
+    await fs.copyFile('/example/.env.example', file)
   } catch (error) {
-    
+    console.log(error);
   }
 }
 

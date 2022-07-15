@@ -11,5 +11,5 @@ module.exports = async function (options) {
     createSchemaOptions.smartContractDirectory = options.directory;
   }
 
-  createSchema(createSchemaOptions);
+  await createSchema(createSchemaOptions);
 };

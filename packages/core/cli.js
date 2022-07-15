@@ -62,7 +62,7 @@ runCommand(command, options)
     return;
   })
   .then(() => {
-    process.exit();
+    // process.exit();
   })
   .catch(error => {
     if (typeof error === "number") {

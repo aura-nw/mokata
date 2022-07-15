@@ -10,7 +10,6 @@ module.exports = async function (options) {
   if (options.directory) {
     buildOptions.smartContractDirectory = options.directory;
   }
-
-  console.log(`CMD options:\n${JSON.stringify(buildOptions)}`);
-  build(buildOptions);
+  
+  await build(buildOptions);
 };

@@ -1,0 +1,40 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "description": "Deploy smart contract",
+  "keywords": [
+    "deploy",
+    "smart",
+    "contract",
+    "aura",
+    "network"
+  ],
+  "author": "HungLV46 <lehung0194@gmail.com>",
+  "homepage": "https://aura.network/",
+  "license": "ISC",
+  "main": "lib/deploy.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aura-nw/mokata.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/aura-nw/mokata/issues"
+  },
+  "dependencies": {
+    "@cosmjs/stargate": "v0.28.10",
+    "@cosmjs/cosmwasm-stargate": "v0.28.10",
+    "@cosmjs/crypto": "v0.28.10",
+    "@cosmjs/faucet": "v0.28.10",
+    "@cosmjs/proto-signing": "v0.28.10"    
+  }
+}

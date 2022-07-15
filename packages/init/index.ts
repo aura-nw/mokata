@@ -40,7 +40,14 @@ async function createEnvFile(localPath: string) {
 async function writeEnv(localPath: string) {
   try {
     let file = path.join(localPath);
-    await fs.copyFile('/example/.env.example', file)
+    let data = {
+      "chainId": "aura-testnet",
+      "rpc": "127.0.0.1:26657",
+      "lcd": "127.0.0.1:1317",
+      "faucetApi": "127.0.0.1:4500",
+      "account": ""
+    }
+    await fs.writeJson(file, data)
   } catch (error) {
     console.log(error);
   }

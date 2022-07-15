@@ -10,7 +10,7 @@ async function saveKey(pair) {
 }
 
 async function verifyLocalPath(localPath, envPair) {
-  let configPath = path.join(localPath, "mokata-account.json");
+  let configPath = path.join(localPath, "env.json");
 
   if (fs.existsSync(configPath)) {
     //env json file exists

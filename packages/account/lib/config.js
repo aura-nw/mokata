@@ -41,7 +41,7 @@ async function writeEnv(localPath, envJson) {
 
     if(checkEmpty.length > 0){
       let secretPair = await fs.readJSON(localPath);
-      secretArr.push(secretPair[0]);
+      secretArr.push(secretPair[0].Account);
     }
     
     await fs.writeJson(file, secretArr);

@@ -38,13 +38,14 @@ async function writeEnv(localPath, envJson) {
     let secretArr = [];
     let checkEmpty = await fs.readFile(localPath);
     secretArr.push(envJson);
+    let secretPair;
 
     if(checkEmpty.length > 0){
-      let secretPair = await fs.readJSON(localPath);
-      secretArr.push(secretPair[0].Account);
+      secretPair = await fs.readJSON(localPath);
+      secretPair.account.push(secretArr);
     }
     
-    await fs.writeJson(file, secretArr);
+    await fs.writeJson(file, secretPair);
   } catch (err) {
     console.error(err);
   }

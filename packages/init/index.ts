@@ -23,7 +23,7 @@ export class InitConfig {
       await writeEnv(configPath);
     }
 
-    await faucet(configPath);
+    // await faucet(configPath);
   }
 }
 
@@ -45,7 +45,7 @@ async function writeEnv(localPath: string) {
       "rpc": "127.0.0.1:26657",
       "lcd": "127.0.0.1:1317",
       "faucetApi": "127.0.0.1:4500",
-      "account": ""
+      "account": new Array()
     }
     await fs.writeJson(file, data)
   } catch (error) {

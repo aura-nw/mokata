@@ -10,9 +10,13 @@ module.exports = {
       describe: "Generate account",
       type: "boolean"
     },
+    faucet: {
+      describe: "Get faucet to account",
+      type: "string"
+    }
   },
   help: {
-    usage: "mokata account [--generate||-g] [--ls]",
+    usage: "mokata account [--generate] [--ls] [--faucet <address>]",
     options: [
       {
         option: "--ls",
@@ -20,9 +24,14 @@ module.exports = {
           "Get list account."
       },
       {
-        option: "--generate|-g",
+        option: "--generate",
         description:
           "Generate account"
+      },
+      {
+        option: "--faucet <address>",
+        description:
+          "Get faucet to account"
       }
     ],
     allowedGlobalOptions: []

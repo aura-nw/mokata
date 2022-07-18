@@ -18,3 +18,20 @@ export async function faucetFile() {
     console.error(err);
   }
 }
+
+export async function faucetAddress(address: string) {
+  let currentDir = process.cwd();
+  let file = path.join(currentDir, "env.json");
+  try {
+    let envJson = await fs.readJSON(file);
+
+    const body = {
+      address: address,
+      denom: "10000000uaura"
+    };
+
+    await axios.default.post(envJson.faucetApi, body);
+  } catch (err) {
+    console.error(err);
+  }
+}

@@ -6,9 +6,11 @@ module.exports = async function (options) {
     await account.saveKey(pair);
   }
 
-  if (options.ls == true){
-    return await account.listAccount();
+  if (options.ls == true) {
+    await account.listAccount();
   }
 
-  await account.faucetFile();
-};
+  if (options.faucet && options.faucet.length > 0){
+    await account.faucetAddress(options.faucet)
+  }
+}

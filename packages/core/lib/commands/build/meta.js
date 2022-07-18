@@ -12,9 +12,10 @@ module.exports = {
       type: "string",
       default: false,
     },
+
   },
   help: {
-    usage: "mokata build [--type||-t] [--directory||-d]",
+    usage: "mokata build [--type] [--directory]",
     options: [
       {
         option: "--type <type>",

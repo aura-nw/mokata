@@ -1,5 +1,7 @@
 import * as amino from "@cosmjs/amino";
 import * as bip39 from "bip39";
+import * as path from "path";
+import * as fs from "fs-extra";
 
 export async function generateAccount() {
   // Generate from mnemonic
@@ -19,4 +21,13 @@ export async function generateAccount() {
   };
 
   return result;
+}
+
+export async function listAccount() {
+  // Return list account
+  let currentDir = process.cwd();
+  let configPath = path.join(currentDir, "env.json");
+  let accountArr = await fs.readJSON(configPath);
+  
+  console.log(accountArr.account);
 }

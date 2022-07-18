@@ -1,6 +1,7 @@
 'use strict';
 
 const Docker = require('dockerode');
+const execSync = require('child_process').execSync;
 
 const DEFAULT_BULD_OPTIONS = {
     optionName: 'cosmwasm/rust-optimizer',
@@ -13,9 +14,11 @@ const DEFAULT_BULD_OPTIONS = {
 const build = async function(options) {
     options = {...DEFAULT_BULD_OPTIONS, ...options};
     const docker = new Docker(options.dockerOptions);
-    
-    // TODO if image does not pre-exist, Error: (HTTP code 404) no such container - No such image
-    
+
+    // TODO find a way to auto pull docker image when perform docker run 
+    // (like --pull="missing" option when using command line)
+    execSync(`docker pull ${options.dockerImageName}`, {stdio: 'inherit'});
+
     // Example of similar docker command:
     //     docker run --rm \
     //         --mount type=bind,source="$(pwd)",target=/code \

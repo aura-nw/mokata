@@ -1,7 +1,6 @@
 import * as fs from "fs-extra";
 import { dockerInit } from "./lib/docker"
 import path from "path";
-import { faucet } from "./lib/faucet";
 
 /**
  * init
@@ -42,9 +41,9 @@ async function writeEnv(localPath: string) {
     let file = path.join(localPath);
     let data = {
       "chainId": "aura-testnet",
-      "rpc": "127.0.0.1:26657",
-      "lcd": "127.0.0.1:1317",
-      "faucetApi": "127.0.0.1:4500",
+      "rpc": "http://127.0.0.1:26657/",
+      "lcd": "http://127.0.0.1:1317/",
+      "faucetApi": "http://127.0.0.1:4500/",
       "account": new Array()
     }
     await fs.writeJson(file, data)

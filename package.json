@@ -1,5 +1,5 @@
 {
-  "private": false,
+  "private": true,
   "scripts": {
     "bootstrap": "npx lerna bootstrap",
     "prepare": "lerna run prepare --stream --concurrency=1",

@@ -144,13 +144,6 @@ const prepareOptions = ({ command, inputStrings, options }) => {
 };
 
 const runCommand = async function (command, options) {
-  try {
-    // migrate Truffle data to the new location if necessary
-    const configMigration = require("./config-migration");
-    await configMigration.migrateTruffleDataIfNecessary();
-  } catch (error) {
-    debug("Truffle data migration failed: %o", error);
-  }
 
   const unhandledRejections = new Map();
 

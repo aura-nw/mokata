@@ -1,9 +1,7 @@
-"use strict";
+import * as amino from "@cosmjs/amino";
+import * as bip39 from "bip39";
 
-var bip39 = require("bip39");
-const amino = require("@cosmjs/amino");
-
-async function generateAccount() {
+export async function generateAccount() {
   // Generate from mnemonic
   let mnemonic = bip39.generateMnemonic();
   let privateKey = await amino.Secp256k1HdWallet.fromMnemonic(mnemonic, {
@@ -22,7 +20,3 @@ async function generateAccount() {
 
   return result;
 }
-
-module.exports = {
-  generateAccount
-};

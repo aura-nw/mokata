@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/aura-nw/mokata/issues"
   },
-  "version": "1.1.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",

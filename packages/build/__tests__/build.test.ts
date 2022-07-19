@@ -1,4 +1,5 @@
 'use strict';
-describe('deploy', () => {
+
+describe('build', () => {
     it('needs tests');
 });

@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildWithOptimizer = exports.build = void 0;
 const dockerode_1 = __importDefault(require("dockerode"));
 const child_process_1 = require("child_process");
-const build = function (options) {
+function build(options) {
     return __awaiter(this, void 0, void 0, function* () {
         const docker = new dockerode_1.default(options.dockerOptions);
         // TODO find a way to auto pull docker image when perform docker run 
@@ -24,6 +24,7 @@ const build = function (options) {
         // Example of similar docker command:
         //     docker run -v '$PWD:/code' -w='/code' --entrypoint /bin/bash rust -c 'cargo schema'
         const buildWithSchemaCmd = 'rustup target add wasm32-unknown-unknown && RUSTFLAGS="-C link-arg=-s" cargo wasm && cargo schema';
+        console.log(options.smartContractDirectory);
         yield docker.run(options.dockerImageName, ['-c', buildWithSchemaCmd], process.stdout, {
             "WorkingDir": "/code",
             "Entrypoint": "/bin/bash",
@@ -33,10 +34,10 @@ const build = function (options) {
             },
         }).then(response => console.log(response[0].StatusCode));
     });
-};
+}
 exports.build = build;
 // build smart contract using docker image: cosmwasm/rust-optimizer
-const buildWithOptimizer = function (options) {
+function buildWithOptimizer(options) {
     return __awaiter(this, void 0, void 0, function* () {
         const docker = new dockerode_1.default(options.dockerOptions);
         // TODO find a way to auto pull docker image when perform docker run 
@@ -60,5 +61,5 @@ const buildWithOptimizer = function (options) {
             },
         }).then(response => console.log(response[0].StatusCode));
     });
-};
+}
 exports.buildWithOptimizer = buildWithOptimizer;

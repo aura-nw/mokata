@@ -13,6 +13,7 @@ async function build (options: { dockerOptions: Docker.DockerOptions | undefined
     // Example of similar docker command:
     //     docker run -v '$PWD:/code' -w='/code' --entrypoint /bin/bash rust -c 'cargo schema'
     const buildWithSchemaCmd = 'rustup target add wasm32-unknown-unknown && RUSTFLAGS="-C link-arg=-s" cargo wasm && cargo schema';
+    console.log(options.smartContractDirectory);
     await docker.run(options.dockerImageName, ['-c', buildWithSchemaCmd], process.stdout, {
         "WorkingDir": "/code",
         "Entrypoint": "/bin/bash",

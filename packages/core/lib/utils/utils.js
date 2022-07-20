@@ -31,4 +31,17 @@ const detectConfigOrDefault = options => {
   }
 };
 
-module.exports = { extractFlags, detectConfigOrDefault };
+const convertToAbsolutePath = (path, ...pathSegments) => {
+  const { existsSync } = require("fs");
+  const { isAbsolute, resolve } = require("path");
+
+  const absolutePath = isAbsolute(path) ? path : resolve(...pathSegments, path);
+  
+  if(!existsSync(absolutePath)) {
+    throw new Error(`Path "${absolutePath}" does not exist.`);
+  }
+
+  return absolutePath;
+}
+
+module.exports = { extractFlags, detectConfigOrDefault, convertToAbsolutePath };

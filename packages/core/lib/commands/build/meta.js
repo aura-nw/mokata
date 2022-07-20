@@ -5,14 +5,13 @@ module.exports = {
     type: {
       describe: "Method to build smart contract",
       type: "string",
-      default: false,
+      default: "rust:1.62.0",
     },
     directory: {
       describe: "Directory contains smart contract",
       type: "string",
-      default: false,
+      default: process.cwd(),
     },
-
   },
   help: {
     usage: "mokata build [--type] [--directory]",

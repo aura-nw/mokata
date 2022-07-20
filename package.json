@@ -1,5 +1,10 @@
 {
-  "private": true,
+  "private": false,
+  "name": "@hunglv46/mokata-test",
+  "version": "0.0.1",
+  "bin": {
+    "mokata": "packages/core/cli.js"
+  },
   "scripts": {
     "bootstrap": "npx lerna bootstrap",
     "prepare": "lerna run prepare --stream --concurrency=1 && husky install",

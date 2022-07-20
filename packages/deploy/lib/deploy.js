@@ -61,6 +61,7 @@ function setup(options) {
         catch (err) {
             wallet = yield generateWalletThenSaveToFile(options.walletFilePath, options.walletFilePassword);
         }
+        console.log(JSON.stringify(wallet, 0, 2));
         const address = (yield wallet.getAccounts())[0].address;
         const client = yield cosmwasm_stargate_1.SigningCosmWasmClient.connectWithSigner(options.rpcURL, wallet, { prefix: options.addressPrefix, gasPrice: options.gasPrice });
         // faucet: get sufficient balance to perform upload

@@ -3,6 +3,5 @@ module.exports = [
   "network",
   "init",
   "build",
-  "schema",
   "deploy"
 ];

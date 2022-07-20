@@ -48,7 +48,8 @@ async function setup (options: {
         wallet = await generateWalletThenSaveToFile(options.walletFilePath, options.walletFilePassword);
     }
     const address = (await wallet.getAccounts())[0].address;
-    const client = await SigningCosmWasmClient.connectWithSigner(options.rpcURL, wallet, { prefix: options.addressPrefix, gasPrice: options.gasPrice });
+    const client = await SigningCosmWasmClient.connectWithSigner(options.rpcURL, wallet, 
+        { prefix: options.addressPrefix, gasPrice: options.gasPrice });
 
     // faucet: get sufficient balance to perform upload
     if(options.faucetUrl) {

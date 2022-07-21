@@ -5,7 +5,7 @@ module.exports = {
     wallet: {
       describe: "Path to file storing information of wallet",
       type: "string",
-      default: "mokata-env.json"
+      default: "wallet"
     },
     rpc: {
       describe: "URL to RPC endpoints",
@@ -36,7 +36,7 @@ module.exports = {
       describe: "Fee for loading smart contract",
       type: "number",
       default: 10000000,
-    },
+    }
   },
   help: {
     usage: "mokata deploy [--type] [--directory]",

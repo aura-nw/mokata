@@ -8,8 +8,19 @@ module.exports = {
     },
     generate: {
       describe: "Generate account",
-      type: "boolean"
+      type: "boolean",
+      default: false
     },
+    getBalance: {
+      describe: "get balance",
+      type: "boolean",
+      default: false
+    },
+    wallet: {
+      describe: "path to wallet",
+      type: "string",
+      default: "wallet"
+    }
   },
   help: {
     usage: "mokata account [--generate||-g] [--ls]",

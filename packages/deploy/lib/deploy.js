@@ -61,13 +61,15 @@ function setup(options) {
         catch (err) {
             wallet = yield generateWalletThenSaveToFile(options.walletFilePath, options.walletFilePassword);
         }
-        console.log(JSON.stringify(wallet, 0, 2));
-        const address = (yield wallet.getAccounts())[0].address;
         const client = yield cosmwasm_stargate_1.SigningCosmWasmClient.connectWithSigner(options.rpcURL, wallet, { prefix: options.addressPrefix, gasPrice: options.gasPrice });
+        const address = (yield wallet.getAccounts())[0].address;
+        let currentBalance = yield client.getBalance(address, options.feeToken);
+        console.log(`Loaded wallet. Address: "${address}", balance: ${currentBalance.amount}${currentBalance.denom}`);
         // faucet: get sufficient balance to perform upload
         if (options.faucetUrl) {
+            console.log('fauceting ...');
             yield hitFaucet(options, address);
-            const currentBalance = yield client.getBalance(address, options.feeToken);
+            currentBalance = yield client.getBalance(address, options.feeToken);
             console.log(`current balance address "${address}": ${currentBalance.amount}${currentBalance.denom}`);
         }
         return [address, client];

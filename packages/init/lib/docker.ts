@@ -1,13 +1,10 @@
-import Dockerode from "dockerode";
-import * as axios from "axios";
+import Docker from "dockerode";
+import { execSync } from 'child_process';
 
 export async function dockerInit() {
-  const dockerApi = new Dockerode({
-    host: "172.29.21.190",
-    port: process.env.DOCKER_PORT || 2375,
-    version: 'v1.25' // required when Docker >= v1.13,
-  });
+  const docker = new Docker({socketPath: '/var/run/docker.sock'});
+  const dockerImageName = 'ghcr.io/aura-nw/aura/serenity/devnet:1.0';
 
-  let checkDockerApi = await dockerApi.ping();
-  console.log(checkDockerApi);
+  // execSync(`docker pull ${dockerImageName}`, {stdio: 'inherit'});
+  execSync(`docker run -d -p 26657:26657 -p 1317:1317 -p 4500:4500 --name aura-devnet ghcr.io/aura-nw/aura/serenity/devnet:1.0`, {stdio: 'inherit'});
 }

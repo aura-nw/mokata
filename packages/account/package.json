@@ -1,0 +1,32 @@
+{
+  "name": "account",
+  "description": "TODO: description",
+  "license": "MIT",
+  "author": "duck59uet <ducnv1911@gmail.com>",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aura-nw/mokata.git",
+    "directory": "packages/account"
+  },
+  "bugs": {
+    "url": "https://github.com/aura-nw/mokata/issues"
+  },
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts"
+  },
+  "dependencies": {
+    "@cosmjs/amino": "^0.28.11",
+    "@cosmjs/faucet": "^0.28.11",
+    "@cosmjs/faucet-client": "^0.28.11",
+    "@cosmjs/stargate": "^0.28.10",
+    "@cosmostation/cosmosjs": "^0.11.2",
+    "axios": "^0.27.2",
+    "bip39": "^3.0.4",
+    "fs-extra": "^10.1.0"
+  }
+}

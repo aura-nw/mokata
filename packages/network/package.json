@@ -1,0 +1,24 @@
+{
+  "name": "network",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "duck59uet <ducnv1911@gmail.com>",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aura-nw/mokata.git",
+    "directory": "packages/network"
+  },
+  "bugs": {
+    "url": "https://github.com/aura-nw/mokata/issues"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts"
+  },
+  "dependencies": {
+    "dockerode": "^3.3.2"
+  }
+}

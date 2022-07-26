@@ -1,10 +1,10 @@
 {
-  "name": "alchemist",
+  "name": "mokata",
   "version": "0.0.0",
   "description": "oclif example Hello World CLI",
   "author": "ducnv1911@gmail.com @duck59uet",
   "bin": {
-    "alchemist": "./bin/run"
+    "mokata": "./bin/run"
   },
   "homepage": "https://github.com/duck59uet/hello-world",
   "license": "MIT",
@@ -39,8 +39,8 @@
     "typescript": "^4.4.3"
   },
   "oclif": {
-    "bin": "alchemist",
-    "dirname": "alchemist",
+    "bin": "mokata",
+    "dirname": "mokata",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",

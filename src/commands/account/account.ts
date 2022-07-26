@@ -1,5 +1,5 @@
 import {Command, Flags} from '@oclif/core'
-import { generateAccount } from '../../packages/account';
+import { generateAccount } from '../../../packages/account';
 
 export default class Account extends Command {
   static description = 'Manage account'
@@ -10,7 +10,7 @@ export default class Account extends Command {
 
   static flags = {
     // flag with a value (-n, --name=VALUE)
-    name: Flags.string({char: 'n', description: 'name to print'}),
+    name: Flags.string({char: 'n', description: 'name to print', required: true}),
     // flag with no value (-f, --force)
     force: Flags.boolean({char: 'f'}),
   }
@@ -21,8 +21,11 @@ export default class Account extends Command {
     const {args, flags} = await this.parse(Account)
 
     if(flags.name) {
-      console.log('alo');
       await generateAccount();
     }
+  }
+
+  async catch(error: any){
+    throw error;
   }
 }
